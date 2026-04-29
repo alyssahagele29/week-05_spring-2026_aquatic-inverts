@@ -1,0 +1,14 @@
+---
+title: "In-class tempelate Week 5"
+author: "Alyssa Hagele
+format: pdf
+---
+
+# Set Up 
+
+## Packages 
+
+
+```
+
+## Data 
