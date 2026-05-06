@@ -60,7 +60,22 @@ water_quality <- read_xlsx(here("data", "Aquatic Sampling Data-2026-03-10.xlsx")
 
 ```
 
+# 2. Problems 
 
+## 1. Visualizing differences across sites in major taxon abundance
+
+### a. Plan your figure 
+
+- x-axis:
+- y-axis:
+- geometry to represent average abundance/L:
+- geometry to represent medians:
+
+### b. Wrangle your data 
+
+### c. Code your figure 
+
+### d. Create a multi panel figure 
 
 
 
