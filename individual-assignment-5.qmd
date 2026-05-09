@@ -170,8 +170,8 @@ copepods <- aq_ins_clean |>
 
 - x-axis: site_full 
 - y-axis: log_ave_lit
-- geometry to represent average abundance/L:
-- geometry to represent medians:
+- geometry to represent average abundance/L: geom_jitter()
+- geometry to represent medians: stat_summary()
 
 ### b. Wrangle your data 
 
