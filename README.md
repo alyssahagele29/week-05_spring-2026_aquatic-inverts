@@ -21,6 +21,8 @@ library(patchwork)
 
 ```
 .
+├──individual-assignment-5.pdf
+├──individual-assignment-5-qmd
 ├── README.md
 ├── code                                          
 │   ├── week-05_in-class-KEY.pdf                  # key (comes with repo)
