@@ -292,6 +292,21 @@ Differences in copepod and ostracod abundance vary across sites, with South of V
 Ostracod abundance seems to not follow site differences in salinity / it appears to be influenced by other factors. For example, South of Phelps Bridge and Devereux Creek has the highest ostracod abundance, and also has low salinity (ppt), however so does Phelps Road and North of Phelps Bridge however they have low ostracod abundances. 
 
 
+## 2. Visualizing total abundance as a function of salinity
+
+### a. Plan your figure
+
+- x-axis: med_sal
+- y-axis: log_ave_lit
+- color: taxon
+- geometry: geom_point()
+- facets: facet_wrap(~ taxon, scales = "free")
+
+### b. Wrangle your data
+
+### c. Code your figure
+
+### d. Interpret your figure 
 
 
 
