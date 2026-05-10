@@ -30,7 +30,6 @@ library(naniar)
 
 # arranging plots
 library(patchwork)
-
 ```
 
 
@@ -56,7 +55,6 @@ sites <- read_xlsx(here("data", "Aquatic Sampling Data-2026-03-10.xlsx"),
 water_quality <- read_xlsx(here("data", "Aquatic Sampling Data-2026-03-10.xlsx"),
                            sheet = "Water Quality",
                            na = c("", "n/a", "N/A", "over", "173+")) 
-
 ```
 
 
@@ -205,8 +203,6 @@ salinity <- ggplot(data = aq_ins_clean,
        title = "Site salinity") +
   # different theme
   theme_bw()
-
-
 ```
 
 # 2. Problems 
@@ -267,6 +263,7 @@ ostracods_plot <- ggplot(data = ostracods,
   # custom theme
   theme_bw()
 
+#showing plot
 ostracods_plot
 ```
 
@@ -314,15 +311,19 @@ aq_ins_new <- aq_ins_clean |>
   mutate(log_ave_lit = log(ave_lit + 1), 
          #asked chat gpt for help to replace dashes with spaces in taxon names
          taxon = str_replace_all(taxon, "_", " "),
+         #replacing taxons to be in title case
          taxon = str_to_title(taxon)) |>
+  #selecting specific columns
   select(site_full,
          taxon,
          med_sal,
          ave_lit,
          log_ave_lit) |>
   #asked chat gpt for help reordering
+  #ordering taxon levels by maximum abundance
   mutate(taxon = fct_reorder(taxon, ave_lit, .fun = max, .desc = TRUE, .na_rm = TRUE)) 
 
+#showing 10 random observations from dataframe
 aq_ins_new |>
   slice_sample(n = 10)
 ```
@@ -335,15 +336,27 @@ aq_ins_new |>
 #| fig-width: 10
 #| fig-height: 8
 
+#base layer: ggplot
 ggplot(data = aq_ins_new,
+       #x axis is med_sal
+       #y axis is log_ave_lit
+       #color by taxon
        mapping = aes(x = med_sal,
                      y = log_ave_lit, 
                      color = taxon)) +
+  #first layer: points
   geom_point() + 
+  #facet to create different panels by taxon
+  #free scales on both axis
   facet_wrap(~taxon, scales = "free") +
+  #custom colors
   scale_color_viridis_d(option = "H") +
+  #changing theme
   theme_bw() +
+  #taking out legend
   theme(legend.position = "none") +
+  #relabeling x and y axis
+  #relabeling title 
   labs(x = "Median Salinity (ppt)",
        y = "log + 1 transformed average abundance/L",
        title = "Aquatic Invertebrate Abundance Across Salinity")
