@@ -303,6 +303,27 @@ Ostracod abundance seems to not follow site differences in salinity / it appears
 - facets: facet_wrap(~ taxon, scales = "free")
 
 ### b. Wrangle your data
+```{r}
+#| label: wrangling aq_ins_clean
+#| message: false
+#| warning: false
+
+#creating new object from aq_ins_clean
+aq_ins_new <- aq_ins_clean |>
+  # create log transformed abundance column
+  mutate(log_ave_lit = log(ave_lit + 1), 
+         taxon = str_to_title(taxon)) |>
+  select(site_full,
+         taxon,
+         med_sal,
+         ave_lit,
+         log_ave_lit) |>
+  #asked chat gpt for help reordering
+  mutate(taxon = fct_reorder(taxon, ave_lit, .fun = max, .desc = TRUE, .na_rm = TRUE)) 
+
+aq_ins_new |>
+  slice_sample(n = 10)
+```
 
 ### c. Code your figure
 
