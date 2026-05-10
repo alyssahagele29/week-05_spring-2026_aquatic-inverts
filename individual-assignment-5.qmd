@@ -312,6 +312,8 @@ Ostracod abundance seems to not follow site differences in salinity / it appears
 aq_ins_new <- aq_ins_clean |>
   # create log transformed abundance column
   mutate(log_ave_lit = log(ave_lit + 1), 
+         #asked chat gpt for help to replace dashes with spaces in taxon names
+         taxon = str_replace_all(taxon, "_", " "),
          taxon = str_to_title(taxon)) |>
   select(site_full,
          taxon,
@@ -326,6 +328,27 @@ aq_ins_new |>
 ```
 
 ### c. Code your figure
+```{r}
+#| label: visualizing total abundance as a function of salinity
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 8
+
+
+ggplot(data = aq_ins_new,
+       mapping = aes(x = med_sal,
+                     y = log_ave_lit, 
+                     color = taxon)) +
+  geom_point() + 
+  facet_wrap(~taxon, scales = "free") +
+  scale_color_viridis_d(option = "H") +
+  theme_bw() +
+  theme(legend.position = "none") +
+  labs(x = "Median Salinity (ppt)",
+       y = "log + 1 transformed average abundance/L",
+       title = "Aquatic Invertebrate Abundance Across Salinity")
+```
 
 ### d. Interpret your figure 
 
