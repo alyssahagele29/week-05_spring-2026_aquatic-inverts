@@ -1,6 +1,7 @@
 ---
 title: "Individual Assignment 5"
 author: "Alyssa Hagele"
+date: "2026-05-09"
 format: pdf
 ---
 
