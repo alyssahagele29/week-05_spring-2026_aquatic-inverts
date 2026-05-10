@@ -285,6 +285,15 @@ salinity /
   (copepods | ostracods_plot)
 ```
 
+### e. Interpret your figure 
+
+Differences in copepod and ostracod abundance vary across sites, with South of Venoco Bridge having the highest average copepod abundance with Devereux Creek following. This contrasts average ostracod abundance as South of Venoco Bridge has a very low average ostracod abundance, Devereux Creek has a similar amount of ostracods, and overall South of Phelps Bridge has the highest average ostracod abundance. 
+
+Ostracod abundance seems to not follow site differences in salinity / it appears to be influenced by other factors. For example, South of Phelps Bridge and Devereux Creek has the highest ostracod abundance, and also has low salinity (ppt), however so does Phelps Road and North of Phelps Bridge however they have low ostracod abundances. 
+
+
+
+
 
 
 
