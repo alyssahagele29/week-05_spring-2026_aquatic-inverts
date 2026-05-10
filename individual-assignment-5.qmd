@@ -335,7 +335,6 @@ aq_ins_new |>
 #| fig-width: 10
 #| fig-height: 8
 
-
 ggplot(data = aq_ins_new,
        mapping = aes(x = med_sal,
                      y = log_ave_lit, 
@@ -352,11 +351,5 @@ ggplot(data = aq_ins_new,
 
 ### d. Interpret your figure 
 
-
-
-
-
-
-
-
+Relationships between salinity and abundance varied across taxons. Ostracods, Copepods, Diptera Chrionomids, and Cladoceras seemed to have relatively high abundances at low salinity, showing a possible negative relationship between salinity and abundance among these taxons. Several taxons such as Nematodes, Diptera Ceratopogonidae, Annelida Oligochaete, Annelida Polychaete, and Hemiptera Corixidae Boatmas didn't reveal a relationship as taxon abundance was low across salinity or points seemed sporadic compared to salinity. 
 
